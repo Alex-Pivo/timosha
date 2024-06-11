@@ -1,11 +1,16 @@
-'use client'
+'use client';
 // ScrollContext.js
-import { createContext, useContext, useRef } from 'react';
+import React, { createContext, useContext, useRef } from 'react';
 
-const ScrollContext = createContext(null);
+interface ScrollContextType {
+    contactSectionRef: React.RefObject<HTMLDivElement>;
+    scrollToContact: () => void;
+}
 
-export const ScrollProvider = ({ children }:any) => {
-    const contactSectionRef = useRef(null);
+const ScrollContext = createContext<ScrollContextType | null>(null);
+
+export const ScrollProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const contactSectionRef = useRef<HTMLDivElement>(null);
     const headerOffset = 150; // Replace with your header's height
 
     const scrollToContact = () => {
@@ -17,6 +22,8 @@ export const ScrollProvider = ({ children }:any) => {
                 top: offsetPosition,
                 behavior: 'smooth'
             });
+        } else {
+            console.warn("ScrollProvider: Contact section reference is not available.");
         }
     };
 
@@ -27,12 +34,13 @@ export const ScrollProvider = ({ children }:any) => {
     );
 };
 
-export const useScroll = () => {
+export const useScroll = (): ScrollContextType => {
     const context = useContext(ScrollContext);
-    if (context === null) {
+    if (!context) {
+        console.warn("useScroll: ScrollProvider is missing.");
         return {
             contactSectionRef: { current: null },
-            scrollToContact: () => console.warn("ScrollProvider is missing."),
+            scrollToContact: () => {},
         };
     }
     return context;
