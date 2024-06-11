@@ -28,8 +28,8 @@ export default function Reports({locale}:any) {
   const [scrollPosition, setScrollPosition] = useState(0);
   let localeValue = locale.value.replace(/"/g, '');
   
-  let [state, setState] = useState([]);
-  let [article, setArticle] = useState([]);
+  let [state, setState] = useState<any[]>([]); // Assuming state is an array of objects with various properties
+  let [article, setArticle] = useState<any[]>([]); // Assuming article is an array of objects with various properties
   let [value1, setValue1] = useState(0);
   let [value2, setValue2] = useState(0);
   let [value3, setValue3] = useState(0);
