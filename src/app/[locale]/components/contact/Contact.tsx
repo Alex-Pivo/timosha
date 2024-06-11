@@ -103,7 +103,7 @@ export const Contact = () => {
 			</div>
 		);
 	};
-	const handleSelectChange = (event) => {
+	const handleSelectChange = (event:any) => {
 		setActiveButton(event.target.value);
 	};
 	const { contactSectionRef } = useScroll();
