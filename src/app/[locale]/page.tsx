@@ -1,6 +1,6 @@
 import React from "react";
 import {OurTeam} from "@/app/[locale]/components/our-team/OurTeam";
-import styles from './page.module.scss'
+import styles from '@/app/[locale]/page.module.scss'
 import { HelpOptions } from '@/app/[locale]/pages/main-page/second-part/help-options/HelpOptions'
 import { OurPartners } from '@/app/[locale]/pages/main-page/second-part/our-partners/OurPartners'
 import { GetHelp } from '@/app/[locale]/pages/main-page/second-part/get-help/GetHelp'
