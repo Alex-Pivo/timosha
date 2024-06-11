@@ -6,7 +6,7 @@ import { OurPartners } from '@/app/[locale]/pages/main-page/second-part/our-part
 import { GetHelp } from '@/app/[locale]/pages/main-page/second-part/get-help/GetHelp'
 import { DonateHelp } from '@/app/[locale]/pages/main-page/second-part/donate-help/DonateHelp'
 import { Footer } from '@/app/[locale]/components/footer/Footer'
-import stylesMain from './pages/main-page/first-part/styles/main.module.scss'
+import stylesMain from '@/app/[locale]/pages/main-page/first-part/styles/main.module.scss'
 import Header from '@/app/[locale]/components/header/Header'
 import Firstblock from '@/app/[locale]/pages/main-page/first-part/pages/firtsBlock'
 import News from '@/app/[locale]/pages/main-page/first-part/pages/news'
