@@ -4,7 +4,7 @@ import { createContext, useContext, useRef } from 'react';
 
 const ScrollContext = createContext(null);
 
-export const ScrollProvider = ({ children }) => {
+export const ScrollProvider = ({ children:any }) => {
     const contactSectionRef = useRef(null);
     const headerOffset = 150; // Replace with your header's height
 
